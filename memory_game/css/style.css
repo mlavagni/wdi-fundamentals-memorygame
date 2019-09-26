@@ -1,5 +1,6 @@
 body{
 	text-align: center;
+	margin: 0;
 }
 
 h1, h2, a{
@@ -12,12 +13,15 @@ h1 {
 	color: #0D2C40;
 	font-weight: 400;
 	font-size: 45px;
+	margin: 0;
 }
 
 a {
 	color: #F15B31;
 	font-weight: 600;
 	font-size: 18px;
+	margin: 0 20px;
+	color: #FFFFFF;
 }
 
 h2 {
@@ -30,5 +34,25 @@ p {
 	font-family: "Droid Serif", serif;
 	font-size: 18px;
 	line-height: 26px;
+}
+
+header{
+	background-color: #F15B31;
+	color: #FFFFFF;
+	padding: 30px 20px;
+}
+
+main{
+	width: 850px;
+	margin: 35px auto;
+}
+
+img{
+	margin: 40px 8px;
+}
+
+nav{
+background-color: #00A6b3;
+
 }
 
