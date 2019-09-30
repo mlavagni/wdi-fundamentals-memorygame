@@ -23,6 +23,7 @@ a {
 	margin: 0 20px;
 	color: #FFFFFF;
 	border-bottom: 2px solid transparent;
+	text-decoration: none;
 }
 
 h2 {
@@ -54,7 +55,7 @@ img{
 
 nav{
 background-color: #00A6b3;
-
+padding: 10px;
 }
 
 footer{
