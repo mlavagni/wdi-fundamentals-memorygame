@@ -39,16 +39,28 @@ function checkForMatch() {
 
 
 function flipCard(cardId){
-	console.log("user flipped " + cards[cardId].rank);
-	console.log(cards[cardId].cardImage);
-	console.log(cards[cardId].suit);
-	cardsInPlay.push(cards[cardId].rank);
+	var card = this.getAttribute("class");
+
+	this.setAttribute("src", cards[card].cardImage);
+
+	cardsInPlay.push(cards[card].rank);
 
 	if (cardsInPlay.length === 2){
 		checkForMatch();
 	}
 };
 
-flipCard(0);
-flipCard(2);
+function createBoard(){
+	for (var i = 0; i < cards.length; i++){
+		var cardElement = document.createElement("img");
+
+		cardElement.setAttribute("src", "images/back.png");
+		cardElement.setAttribute("class", i);
+		cardElement.addEventListener("click", flipCard);
+		document.getElementById("game-board").appendChild(cardElement);
+	}
+}
+
+
+createBoard();
 
