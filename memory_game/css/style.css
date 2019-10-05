@@ -98,3 +98,18 @@ a:hover {
 	
 	border-color: white;
 }
+
+button {
+	font-size: 2em;
+	width: 170px;
+	height: 60px;
+	border-radius: 15px;
+	border-color: #00A6b3;
+	text-align: center;
+}
+
+.wins, .losses {
+	color: #00A6b3;
+	font-size: 2em;
+
+}

@@ -1,4 +1,7 @@
 
+var scoreWins = 0;
+var scoreLosses=0;
+
 var cards = [
 	{
 		rank: "queen",
@@ -31,10 +34,13 @@ var cardsInPlay = [];
 
 function checkForMatch() {
 	if (cardsInPlay[0]===cardsInPlay[1]){
+			scoreWins += 1;
 			alert("You found a match!");
 		} else {
+			scoreLosses += 1;
 			alert("sorry try again");
 		}
+		showScore();
 };
 
 
@@ -49,6 +55,30 @@ function flipCard(cardId){
 		checkForMatch();
 	}
 };
+document.getElementById("reset").addEventListener("click", resetGame);
+document.getElementById("newGame").addEventListener("click", newGame);
+
+function resetGame(){
+	scoreLosses = 0;
+	scoreWins = 0;
+	removeCards();
+	cardsInPlay = [];
+	createBoard();
+	showScore();
+}
+
+function newGame(){
+	removeCards();
+	cardsInPlay = [];
+	createBoard();
+}
+
+function removeCards(){
+	var carsToRemove =document.querySelectorAll("img");
+	for (var i = 0; i < carsToRemove.length; i++){
+		carsToRemove[i].remove();
+	}
+}
 
 function createBoard(){
 	for (var i = 0; i < cards.length; i++){
@@ -58,7 +88,13 @@ function createBoard(){
 		cardElement.setAttribute("class", i);
 		cardElement.addEventListener("click", flipCard);
 		document.getElementById("game-board").appendChild(cardElement);
+		
 	}
+}
+
+function showScore(){
+	document.getElementsByClassName("wins")[0].innerHTML = "Wins = " + scoreWins;
+	document.getElementsByClassName("losses")[0].innerHTML = "Losses = " + scoreLosses;
 }
 
 
